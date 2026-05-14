@@ -118,7 +118,7 @@ The agents operate through **LangGraph's StateGraph**, which manages:
 - API keys for at least one LLM provider:
   - **OpenAI**: [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
   - **Anthropic**: [https://console.anthropic.com/](https://console.anthropic.com/)
-
+  - **Groq**: [https://console.groq.com/keys]
 ### Step 1: Clone Repository
 
 ```bash
