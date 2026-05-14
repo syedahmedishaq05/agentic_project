@@ -1,0 +1,14 @@
+[
+  {
+    "query": "How does Retrieval-Augmented Generation reduce hallucination in large language models?",
+    "ground_truth": "Retrieval-Augmented Generation (RAG) reduces hallucination by grounding LLM outputs in retrieved documents from external knowledge bases. Instead of relying solely on parametric memory, the model conditions its generation on retrieved evidence, making outputs factually verifiable and traceable to sources. This has been shown to substantially improve factual accuracy on knowledge-intensive NLP tasks."
+  },
+  {
+    "query": "What are the advantages of multi-agent AI systems over single LLM approaches for complex reasoning?",
+    "ground_truth": "Multi-agent AI systems outperform single LLMs on complex reasoning by decomposing tasks into specialized subtasks handled by role-specific agents. This mirrors human team collaboration where different experts handle planning, execution, and critique. Empirical studies show that task decomposition improves accuracy, reduces errors, and produces more coherent outputs. Frameworks like CrewAI and LangGraph enable structured agent communication and coordination."
+  },
+  {
+    "query": "How does Chain-of-Thought prompting improve LLM performance on reasoning tasks?",
+    "ground_truth": "Chain-of-Thought prompting improves LLM reasoning by encouraging the model to generate intermediate reasoning steps before producing a final answer. This elicits step-by-step problem solving that mirrors human cognitive processes. Studies show CoT substantially boosts performance on arithmetic, commonsense, and symbolic reasoning benchmarks, particularly in larger models."
+  }
+]
