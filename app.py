@@ -79,7 +79,7 @@ st.markdown("""
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## ⚙️ Configuration")
-    provider = st.selectbox("LLM Provider", ["openai", "anthropic"], index=0)
+    provider = st.selectbox("LLM Provider", ["groq", "openai", "anthropic"], index=0)
     os.environ["LLM_PROVIDER"] = provider
 
     if provider == "openai":
@@ -87,11 +87,16 @@ with st.sidebar:
                                 value=os.getenv("OPENAI_API_KEY", ""))
         if api_key:
             os.environ["OPENAI_API_KEY"] = api_key
-    else:
+    elif provider == "anthropic":
         api_key = st.text_input("Anthropic API Key", type="password",
                                 value=os.getenv("ANTHROPIC_API_KEY", ""))
         if api_key:
             os.environ["ANTHROPIC_API_KEY"] = api_key
+    else:
+        api_key = st.text_input("Groq API Key", type="password",
+                                value=os.getenv("GROQ_API_KEY", ""))
+        if api_key:
+            os.environ["GROQ_API_KEY"] = api_key
 
     max_papers = st.slider("Max Papers to Retrieve", 3, 15, 6)
     os.environ["MAX_PAPERS"] = str(max_papers)
@@ -200,7 +205,12 @@ if run_btn and query.strip():
 
         with tab1:
             st.markdown("## Research Answer")
-            st.markdown(final.get("final_answer", "No answer generated."))
+            final_answer = final.get("final_answer", "") or ""
+            st.markdown(f"**Answer length:** {len(final_answer.split())} words")
+            if final_answer.strip():
+                st.write(final_answer)
+            else:
+                st.warning("No final answer was generated.")
 
         with tab2:
             st.markdown(f"## Retrieved Papers ({len(final.get('papers', []))})")

@@ -5,7 +5,7 @@ perspectives in the retrieved literature.
 """
 from __future__ import annotations
 from typing import List, Dict, Any
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from config import get_llm
 
 
@@ -65,7 +65,8 @@ Please provide a critical analysis of this body of literature."""
             HumanMessage(content=content),
         ]
         response = self.llm.invoke(messages)
-        return response.content.strip()
+        text = getattr(response, "text", None) or getattr(response, "content", "")
+        return text.strip()
 
     def identify_consensus(self, query: str, papers: List[Dict]) -> str:
         """Identify consensus and contested points across papers."""
@@ -80,7 +81,8 @@ Papers:
             HumanMessage(content=content),
         ]
         response = self.llm.invoke(messages)
-        return response.content.strip()
+        text = getattr(response, "text", None) or getattr(response, "content", "")
+        return text.strip()
 
     def run(self, summarizer_output: Dict[str, Any]) -> Dict[str, Any]:
         """

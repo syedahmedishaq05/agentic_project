@@ -56,7 +56,7 @@ def evaluate_response(hypothesis: str, reference: str) -> Dict[str, float]:
 def get_single_llm_baseline(query: str) -> str:
     """Get a direct single-LLM answer (no agent pipeline) for comparison."""
     from config import get_llm
-    from langchain.schema import HumanMessage, SystemMessage
+    from langchain_core.messages import HumanMessage, SystemMessage
 
     llm = get_llm(temperature=0.3)
     messages = [
@@ -67,7 +67,7 @@ def get_single_llm_baseline(query: str) -> str:
         HumanMessage(content=query),
     ]
     response = llm.invoke(messages)
-    return response.content.strip()
+    return (getattr(response, "text", None) or getattr(response, "content", "")).strip()
 
 
 # ── Benchmark Runner ──────────────────────────────────────────────────────────

@@ -8,11 +8,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── LLM Settings ────────────────────────────────────────────────────────────
-LLM_PROVIDER     = os.getenv("LLM_PROVIDER", "openai")
+LLM_PROVIDER     = os.getenv("LLM_PROVIDER", "groq").lower()
 OPENAI_API_KEY   = os.getenv("OPENAI_API_KEY", "")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+GROQ_API_KEY     = os.getenv("GROQ_API_KEY", "")
 OPENAI_MODEL     = os.getenv("OPENAI_MODEL", "gpt-4o")
 ANTHROPIC_MODEL  = os.getenv("ANTHROPIC_MODEL", "claude-3-5-sonnet-20241022")
+GROQ_MODEL       = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 # ── RAG Settings ─────────────────────────────────────────────────────────────
 VECTOR_STORE_PATH = os.getenv("VECTOR_STORE_PATH", "./data/faiss_index")
@@ -30,6 +32,13 @@ def get_llm(temperature: float = 0.3):
         return ChatAnthropic(
             model=ANTHROPIC_MODEL,
             anthropic_api_key=ANTHROPIC_API_KEY,
+            temperature=temperature,
+        )
+    elif LLM_PROVIDER == "groq":
+        from langchain_groq import ChatGroq
+        return ChatGroq(
+            model=GROQ_MODEL,
+            api_key=GROQ_API_KEY or None,
             temperature=temperature,
         )
     else:

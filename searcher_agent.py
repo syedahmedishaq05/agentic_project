@@ -8,7 +8,7 @@ import time
 import requests
 import arxiv
 from typing import List, Dict, Any
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from config import get_llm, MAX_PAPERS, SEMANTIC_SCHOLAR_API_KEY
 
 
@@ -33,8 +33,9 @@ class SearcherAgent:
             HumanMessage(content=f"Research question: {query}"),
         ]
         response = self.llm.invoke(messages)
+        raw_text = getattr(response, "text", None) or getattr(response, "content", "")
         try:
-            keywords = eval(response.content.strip())
+            keywords = eval(raw_text.strip())
             if isinstance(keywords, list):
                 return keywords[:5]
         except Exception:

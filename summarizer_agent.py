@@ -5,7 +5,7 @@ using extractive + abstractive summarization.
 """
 from __future__ import annotations
 from typing import List, Dict, Any
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from config import get_llm
 
 
@@ -46,7 +46,8 @@ Please summarize this paper in relation to the research question."""
         ]
         try:
             response = self.llm.invoke(messages)
-            summary = response.content.strip()
+            summary = getattr(response, "text", None) or getattr(response, "content", "")
+            summary = summary.strip()
         except Exception as e:
             summary = f"[Summarizer Error] Could not summarize: {e}"
 

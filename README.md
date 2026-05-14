@@ -36,7 +36,7 @@ The system uses a **LangGraph-based orchestration pipeline** with four specializ
 - **Multi-agent workflow**: Each agent specializes in a specific task (search → summarize → critique → write)
 - **Academic rigor**: Designed specifically for research synthesis with proper citations and critical analysis
 - **RAG-grounded**: All outputs are grounded in retrieved chunks, reducing hallucinations
-- **Flexible LLM support**: Works with OpenAI GPT-4 or Anthropic Claude
+- **Flexible LLM support**: Works with Groq llama-3.3-70b-versatile, OpenAI GPT-4, or Anthropic Claude
 - **Web UI**: User-friendly Streamlit interface for interactive research
 - **Benchmarking**: Built-in evaluation framework comparing multi-agent vs. single-LLM performance
 
@@ -99,7 +99,7 @@ The agents operate through **LangGraph's StateGraph**, which manages:
 | Component | Technology | Purpose |
 |-----------|-----------|---------|
 | **Orchestration** | LangGraph | State graph pipeline coordination |
-| **LLMs** | OpenAI GPT-4 / Anthropic Claude | Language understanding and generation |
+| **LLMs** | Groq llama-3.3-70b-versatile / OpenAI GPT-4 / Anthropic Claude | Language understanding and generation |
 | **Search** | ArXiv API, Semantic Scholar API | Academic paper retrieval |
 | **Embeddings** | Sentence Transformers (all-MiniLM-L6-v2) | Dense vector representations |
 | **Vector DB** | FAISS | Similarity search over paper chunks |
@@ -141,7 +141,7 @@ pip install -r requirements.txt
 
 This installs:
 - **langchain** & **langgraph**: Agent orchestration
-- **openai** & **anthropic**: LLM APIs
+- **groq**, **openai** & **anthropic**: LLM APIs
 - **sentence-transformers**: Embedding models
 - **faiss-cpu**: Vector similarity search
 - **streamlit**: Web interface
@@ -158,9 +158,11 @@ cp env.example .env
 Edit `.env` and add your API keys:
 
 ```bash
+GROQ_API_KEY=your_groq_api_key_here
 OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
-LLM_PROVIDER=openai  # or "anthropic"
+LLM_PROVIDER=groq  # or "openai" or "anthropic"
+GROQ_MODEL=llama-3.3-70b-versatile
 OPENAI_MODEL=gpt-4o
 ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
 ```
@@ -236,9 +238,11 @@ All configuration is managed in `config.py` and `.env`:
 ### LLM Settings
 
 ```python
-LLM_PROVIDER = "openai"  # or "anthropic"
+LLM_PROVIDER = "groq"  # or "openai" or "anthropic"
+GROQ_API_KEY = "your_groq_api_key_here"
 OPENAI_API_KEY = "sk-..."
 ANTHROPIC_API_KEY = "sk-ant-..."
+GROQ_MODEL = "llama-3.3-70b-versatile"
 OPENAI_MODEL = "gpt-4o"
 ANTHROPIC_MODEL = "claude-3-5-sonnet-20241022"
 ```
@@ -722,7 +726,7 @@ This project is licensed under the MIT License – see LICENSE file for details.
 ## 🙏 Acknowledgments
 
 - **LangChain & LangGraph**: Agent and orchestration framework
-- **OpenAI & Anthropic**: Large language models
+- **Groq, OpenAI & Anthropic**: Large language models
 - **ArXiv & Semantic Scholar**: Academic paper repositories
 - **FAISS**: Efficient similarity search
 - **Streamlit**: Web UI framework

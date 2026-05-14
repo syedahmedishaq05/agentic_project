@@ -1,0 +1,42 @@
+Collecting langchain-groq
+  Downloading langchain_groq-1.1.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting groq
+  Downloading groq-1.2.0-py3-none-any.whl.metadata (16 kB)
+  Downloading groq-0.37.1-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: langchain-core<2.0.0,>=1.2.8 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-groq) (1.4.0)
+Requirement already satisfied: anyio<5,>=3.5.0 in /home/codespace/.local/lib/python3.12/site-packages (from groq) (4.13.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /home/codespace/.local/lib/python3.12/site-packages (from groq) (1.9.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in /home/codespace/.local/lib/python3.12/site-packages (from groq) (0.28.1)
+Requirement already satisfied: pydantic<3,>=1.9.0 in /home/codespace/.local/lib/python3.12/site-packages (from groq) (2.12.5)
+Requirement already satisfied: sniffio in /home/codespace/.local/lib/python3.12/site-packages (from groq) (1.3.1)
+Requirement already satisfied: typing-extensions<5,>=4.10 in /home/codespace/.local/lib/python3.12/site-packages (from groq) (4.15.0)
+Requirement already satisfied: idna>=2.8 in /home/codespace/.local/lib/python3.12/site-packages (from anyio<5,>=3.5.0->groq) (3.15)
+Requirement already satisfied: certifi in /home/codespace/.local/lib/python3.12/site-packages (from httpx<1,>=0.23.0->groq) (2026.2.25)
+Requirement already satisfied: httpcore==1.* in /home/codespace/.local/lib/python3.12/site-packages (from httpx<1,>=0.23.0->groq) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /home/codespace/.local/lib/python3.12/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->groq) (0.16.0)
+Requirement already satisfied: jsonpatch<2.0.0,>=1.33.0 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-core<2.0.0,>=1.2.8->langchain-groq) (1.33)
+Requirement already satisfied: langchain-protocol>=0.0.14 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-core<2.0.0,>=1.2.8->langchain-groq) (0.0.15)
+Requirement already satisfied: langsmith<1.0.0,>=0.3.45 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-core<2.0.0,>=1.2.8->langchain-groq) (0.8.4)
+Requirement already satisfied: packaging>=23.2.0 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-core<2.0.0,>=1.2.8->langchain-groq) (26.2)
+Requirement already satisfied: pyyaml<7.0.0,>=5.3.0 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-core<2.0.0,>=1.2.8->langchain-groq) (6.0.3)
+Requirement already satisfied: tenacity!=8.4.0,<10.0.0,>=8.1.0 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-core<2.0.0,>=1.2.8->langchain-groq) (9.1.4)
+Requirement already satisfied: uuid-utils<1.0,>=0.12.0 in /home/codespace/.local/lib/python3.12/site-packages (from langchain-core<2.0.0,>=1.2.8->langchain-groq) (0.15.0)
+Requirement already satisfied: jsonpointer>=1.9 in /home/codespace/.local/lib/python3.12/site-packages (from jsonpatch<2.0.0,>=1.33.0->langchain-core<2.0.0,>=1.2.8->langchain-groq) (3.1.1)
+Requirement already satisfied: orjson>=3.9.14 in /home/codespace/.local/lib/python3.12/site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.8->langchain-groq) (3.11.9)
+Requirement already satisfied: requests-toolbelt>=1.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.8->langchain-groq) (1.0.0)
+Requirement already satisfied: requests>=2.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.8->langchain-groq) (2.33.1)
+Requirement already satisfied: xxhash>=3.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.8->langchain-groq) (3.7.0)
+Requirement already satisfied: zstandard>=0.23.0 in /home/codespace/.local/lib/python3.12/site-packages (from langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.8->langchain-groq) (0.25.0)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/codespace/.local/lib/python3.12/site-packages (from pydantic<3,>=1.9.0->groq) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /home/codespace/.local/lib/python3.12/site-packages (from pydantic<3,>=1.9.0->groq) (2.41.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in /home/codespace/.local/lib/python3.12/site-packages (from pydantic<3,>=1.9.0->groq) (0.4.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/codespace/.local/lib/python3.12/site-packages (from requests>=2.0.0->langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.8->langchain-groq) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in /home/codespace/.local/lib/python3.12/site-packages (from requests>=2.0.0->langsmith<1.0.0,>=0.3.45->langchain-core<2.0.0,>=1.2.8->langchain-groq) (2.7.0)
+Downloading langchain_groq-1.1.2-py3-none-any.whl (19 kB)
+Downloading groq-0.37.1-py3-none-any.whl (137 kB)
+Installing collected packages: groq, langchain-groq
+
+Successfully installed groq-0.37.1 langchain-groq-1.1.2
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: python -m pip install --upgrade pip

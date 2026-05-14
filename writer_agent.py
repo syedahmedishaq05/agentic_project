@@ -5,7 +5,7 @@ academically structured final answer.
 """
 from __future__ import annotations
 from typing import List, Dict, Any
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from config import get_llm
 
 
@@ -100,7 +100,8 @@ Now write the comprehensive academic synthesis report."""
             HumanMessage(content=context),
         ]
         response = self.llm.invoke(messages)
-        final_answer = response.content.strip()
+        final_answer = getattr(response, "text", None) or getattr(response, "content", "")
+        final_answer = final_answer.strip()
 
         print("[Writer] Done. Answer generated.")
         return {
