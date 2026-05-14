@@ -1,8 +1,8 @@
-# 🔬 AMARA - Multi-Agent Research Assistant
+#  AMARA - Multi-Agent Research Assistant
 
 > An advanced AI-powered research assistant that synthesizes academic literature through a coordinated multi-agent pipeline, leveraging Retrieval-Augmented Generation (RAG) and large language models to answer complex research questions comprehensively.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -20,7 +20,7 @@
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 **AMARA** (Multi-Agent Research Assistant) is a sophisticated AI system designed to answer complex research questions by:
 
@@ -42,19 +42,19 @@ The system uses a **LangGraph-based orchestration pipeline** with four specializ
 
 ---
 
-## ✨ Features
+##  Features
 
 ### Core Capabilities
 
-- **📚 Intelligent Paper Retrieval**: Automatically extracts optimal keywords and searches ArXiv and Semantic Scholar
-- **📄 Structured Summarization**: Generates academic summaries covering core contributions, methodology, results, and relevance
-- **🔍 Critical Analysis**: Identifies research gaps, methodological weaknesses, missing perspectives, and contradictions
-- **✍️ Synthesis Writing**: Produces comprehensive, well-cited academic answers in APA format
-- **🎯 RAG Integration**: Builds a FAISS vector index for semantic similarity search over paper contents
-- **🔄 State Management**: LangGraph-based state orchestration with clean error handling
-- **📊 Performance Evaluation**: ROUGE and BLEU metrics comparing multi-agent vs. single-LLM baselines
-- **💬 Interactive UI**: Streamlit web interface for conversational interaction
-- **⚙️ Configurable**: Support for multiple LLM providers and customizable search parameters
+- ** Intelligent Paper Retrieval**: Automatically extracts optimal keywords and searches ArXiv and Semantic Scholar
+- ** Structured Summarization**: Generates academic summaries covering core contributions, methodology, results, and relevance
+- ** Critical Analysis**: Identifies research gaps, methodological weaknesses, missing perspectives, and contradictions
+- ** Synthesis Writing**: Produces comprehensive, well-cited academic answers in APA format
+- ** RAG Integration**: Builds a FAISS vector index for semantic similarity search over paper contents
+- ** State Management**: LangGraph-based state orchestration with clean error handling
+- ** Performance Evaluation**: ROUGE and BLEU metrics comparing multi-agent vs. single-LLM baselines
+- ** Interactive UI**: Streamlit web interface for conversational interaction
+- ** Configurable**: Support for multiple LLM providers and customizable search parameters
 
 ### Quality Features
 
@@ -66,7 +66,7 @@ The system uses a **LangGraph-based orchestration pipeline** with four specializ
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### System Overview
 
@@ -109,7 +109,7 @@ The agents operate through **LangGraph's StateGraph**, which manages:
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ### Prerequisites
 
@@ -265,7 +265,7 @@ SEMANTIC_SCHOLAR_API_KEY = ""  # Get free at semanticscholar.org
 
 ---
 
-## 📖 Usage Guide
+##  Usage Guide
 
 ### Basic Query Flow
 
@@ -326,7 +326,7 @@ print("References:", result["references"])
 
 ---
 
-## 🤖 Agent Descriptions
+##  Agent Descriptions
 
 ### Searcher Agent (`searcher_agent.py`)
 
@@ -420,7 +420,7 @@ Direct evidence-based answer
 
 ---
 
-## 🔍 RAG Pipeline
+##  RAG Pipeline
 
 ### Overview
 
@@ -482,7 +482,7 @@ rag.load_index()  # Load previously saved index
 
 ---
 
-## 📊 Evaluation & Benchmarking
+##  Evaluation & Benchmarking
 
 ### Evaluation Module (`evaluator.py`)
 
@@ -552,7 +552,7 @@ Example output:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 agentic_project/
@@ -595,7 +595,7 @@ agentic_project/
 
 ---
 
-## 👨‍💻 Development
+##  Development
 
 ### Code Organization
 
@@ -676,7 +676,7 @@ In `rag_pipeline.py`:
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 ### Reporting Issues
 
@@ -717,13 +717,13 @@ python evaluator.py
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License – see LICENSE file for details.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **LangChain & LangGraph**: Agent and orchestration framework
 - **Groq, OpenAI & Anthropic**: Large language models
@@ -734,7 +734,7 @@ This project is licensed under the MIT License – see LICENSE file for details.
 
 ---
 
-## 📞 Support
+##  Support
 
 For questions or issues:
 - **Documentation**: See this README
