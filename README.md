@@ -46,15 +46,15 @@ The system uses a **LangGraph-based orchestration pipeline** with four specializ
 
 ### Core Capabilities
 
-- ** Intelligent Paper Retrieval**: Automatically extracts optimal keywords and searches ArXiv and Semantic Scholar
-- ** Structured Summarization**: Generates academic summaries covering core contributions, methodology, results, and relevance
-- ** Critical Analysis**: Identifies research gaps, methodological weaknesses, missing perspectives, and contradictions
-- ** Synthesis Writing**: Produces comprehensive, well-cited academic answers in APA format
-- ** RAG Integration**: Builds a FAISS vector index for semantic similarity search over paper contents
-- ** State Management**: LangGraph-based state orchestration with clean error handling
-- ** Performance Evaluation**: ROUGE and BLEU metrics comparing multi-agent vs. single-LLM baselines
-- ** Interactive UI**: Streamlit web interface for conversational interaction
-- ** Configurable**: Support for multiple LLM providers and customizable search parameters
+- **Intelligent Paper Retrieval**: Automatically extracts optimal keywords and searches ArXiv and Semantic Scholar
+- **Structured Summarization**: Generates academic summaries covering core contributions, methodology, results, and relevance
+- **Critical Analysis**: Identifies research gaps, methodological weaknesses, missing perspectives, and contradictions
+- **Synthesis Writing**: Produces comprehensive, well-cited academic answers in APA format
+- **RAG Integration**: Builds a FAISS vector index for semantic similarity search over paper contents
+- **State Management**: LangGraph-based state orchestration with clean error handling
+- **Performance Evaluation**: ROUGE and BLEU metrics comparing multi-agent vs. single-LLM baselines
+- **Interactive UI**: Streamlit web interface for conversational interaction
+- **Configurable**: Support for multiple LLM providers and customizable search parameters
 
 ### Quality Features
 
@@ -176,7 +176,7 @@ MAX_CHUNKS=5
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Option 1: Interactive Web UI
 
@@ -231,7 +231,7 @@ print(f"Baseline ROUGE-1: {result['baseline_metrics']['rouge1_f']}")
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 All configuration is managed in `config.py` and `.env`:
 
